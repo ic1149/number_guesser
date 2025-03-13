@@ -15,7 +15,7 @@ func main() {
 	var err error = nil
 	var tries uint = 0
 	for target != guess {
-		fmt.Printf("guess (%v-%v): ", min, max)
+		fmt.Printf("guess (%v<=x<=%v): ", min, max)
 		fmt.Scanln(&input)
 		guess, err = strconv.Atoi(input)
 		if err != nil {
@@ -24,13 +24,13 @@ func main() {
 
 		} else if guess > target {
 			if guess < max {
-				max = guess
+				max = guess - 1
 			}
 			fmt.Println("too big")
 
 		} else if guess < target {
 			if guess > min {
-				min = guess
+				min = guess + 1
 			}
 			fmt.Println("too small")
 		}
