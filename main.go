@@ -9,7 +9,7 @@ import (
 func main() {
 	var min int = 1
 	var max int = 100
-	var target int = rand.IntN(max) + min
+	var target int = rand.IntN(max-min) + min
 	var guess int = 0
 	var input string
 	var err error = nil
